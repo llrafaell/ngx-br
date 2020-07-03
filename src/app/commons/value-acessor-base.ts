@@ -1,9 +1,10 @@
 import { ControlValueAccessor } from '@angular/forms';
-import { Input } from '@angular/core';
+import { Input, Directive } from '@angular/core';
 
 const vanillaMasker = require('vanilla-masker');
 
-export abstract class ValueAccessorBase<T> implements ControlValueAccessor {
+@Directive()
+export abstract class ValueAccessorBase<T=unknown> implements ControlValueAccessor {
 
   @Input()
   public disabled: boolean = false;
